@@ -514,5 +514,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
+# Xiaomi
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Inherit from vendor blobs
 include vendor/xiaomi/veux/veux-vendor.mk
