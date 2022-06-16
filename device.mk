@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
     CutoutRingServiceVeux \
     libcamera2ndk_vendor \
     libstdc++.vendor \
+    vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Component Overrides
