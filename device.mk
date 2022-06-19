@@ -301,6 +301,17 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlayVeux \
+    DialerOverlayVeux \
+    FrameworksResOverlayVeux \
+    SettingsOverlayVeux \
+    SettingsProviderOverlayVeux \
+    SystemUIOverlayVeux \
+    TelephonyOverlayVeux \
+    WifiOverlayVeux    
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
