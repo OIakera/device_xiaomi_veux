@@ -284,6 +284,10 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation \
     libstagefright_softomx.vendor
 
+PRODUCT_PACKAGES += \
+    init.qti.media.rc \
+    init.qti.media.sh    
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
