@@ -142,12 +142,6 @@ vendor/etc/spk_cal_pinknoise.wav
 vendor/etc/spk_cal_silence.wav
 vendor/etc/usb_audio_policy_configuration.xml
 
-# Audio FX modules
-system_ext/etc/permissions/audiosphere.xml
-system_ext/framework/audiosphere.jar
-vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libshoebox.so
-
 # Audio Effects
 vendor/lib/soundfx/libhwdap.so
 vendor/lib/soundfx/libmisoundfx.so
@@ -157,6 +151,12 @@ vendor/lib64/soundfx/libhwdap.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libswgamedap.so
+
+# Audio FX modules
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libshoebox.so
 
 # Audio Hardware
 vendor/lib/hw/audio.primary.holi.so
@@ -309,16 +309,12 @@ vendor/lib64/libalCFR.so
 vendor/lib64/libalLDC.so
 vendor/lib64/libalhLDC.so
 vendor/lib64/libanc_dc_base.so
-vendor/lib64/libarcsoft_hdr_detection.so
-vendor/lib64/libarcsoft_high_dynamic_range.so
-vendor/lib64/libarcsoft_low_light_hdr.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbitmlenginev2.so
 vendor/lib64/libc++_shared.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamera_scene.so
 vendor/lib64/libcamerapostproc.so
-vendor/lib64/libcamxswispiqmodule.so
 vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2svarnn.so
 vendor/lib64/libcapiv2vop.so
@@ -368,6 +364,9 @@ vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 # Camera arcsoft
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_dualcam_refocus_image.so
+vendor/lib64/libarcsoft_hdr_detection.so
+vendor/lib64/libarcsoft_high_dynamic_range.so
+vendor/lib64/libarcsoft_low_light_hdr.so
 vendor/lib64/libarcsoft_portrait_lighting.so
 vendor/lib64/libarcsoft_portrait_lighting_c.so
 vendor/lib64/libarcsoft_super_night_raw.so
@@ -382,6 +381,7 @@ vendor/lib64/libcamxifestriping.so
 vendor/lib64/libcamximageformatutils.so
 vendor/lib64/libcamxqsatalgo.so
 vendor/lib64/libcamxstatscore.so
+vendor/lib64/libcamxswispiqmodule.so
 vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 
@@ -519,9 +519,6 @@ vendor/lib64/libcacertclient.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
-# Charger (Mi Turbo Charge)
-vendor/bin/batterysecret
-
 # CDSP
 vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
@@ -529,6 +526,17 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
+
+# Charger (Mi Turbo Charge)
+vendor/bin/batterysecret
+
+# Configstore
+vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
+vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
+
+# Consumer IR
+vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.holi.so
 
 # CNE
 vendor/app/CneApp/lib/arm64/libvndfwk_detect_jni.qti.so
@@ -646,14 +654,6 @@ vendor/lib64/libfastcvdsp_stub.so
 -vendor/lib64/libfastcvopt.so
 vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
-# Configstore
-vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
-vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
-
-# Consumer IR
-vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.holi.so
-
 # Diag
 vendor/bin/diag-router
 vendor/etc/init/vendor.qti.diag.rc
@@ -685,6 +685,9 @@ vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/libtinyxml2_1.so
 
+# Display calibration
+vendor/etc/qdcm_calib_data_xiaomi_k6s_38_0c_0a_fhd_dsc_video_dsi_panel.xml
+
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
@@ -700,9 +703,6 @@ vendor/lib64/vendor.display.postproc@1.0.so
 
 # Display SVIConfig
 vendor/etc/SVIConfig.xml
-
-# Display calibration
-vendor/etc/qdcm_calib_data_xiaomi_k6s_38_0c_0a_fhd_dsc_video_dsi_panel.xml
 
 # DPM
 system/framework/tcmclient.jar
@@ -873,15 +873,6 @@ vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-# IPA firmware
-vendor/firmware/ipa_fws.b00
-vendor/firmware/ipa_fws.b01
-vendor/firmware/ipa_fws.b02
-vendor/firmware/ipa_fws.b03
-vendor/firmware/ipa_fws.b04
-vendor/firmware/ipa_fws.elf
-vendor/firmware/ipa_fws.mdt
-
 # IMS
 -system_ext/app/uceShimService/uceShimService.apk
 system_ext/lib64/lib-imsvideocodec.so
@@ -936,6 +927,15 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+
+# IPA firmware
+vendor/firmware/ipa_fws.b00
+vendor/firmware/ipa_fws.b01
+vendor/firmware/ipa_fws.b02
+vendor/firmware/ipa_fws.b03
+vendor/firmware/ipa_fws.b04
+vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.mdt
 
 # IRQ balance
 vendor/bin/msm_irqbalance
@@ -1085,14 +1085,6 @@ vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
 
-# Neural networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
-vendor/lib64/unnhal-acc-common.so
-vendor/lib64/unnhal-acc-gpu.so
-vendor/lib64/unnhal-acc-hvx.so
-
 # NFC
 vendor/bin/hw/android.hardware.nfc@1.2-service
 vendor/bin/nqnfcinfo
@@ -1115,6 +1107,14 @@ vendor/lib64/nfc_nci_nxp.so
 vendor/lib64/vendor.nxp.eventprocessor@1.0.so
 vendor/lib64/vendor.nxp.nxpnfc@2.0.so
 vendor/libnfc-nxp_RF.conf
+
+# Neural networks
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc
+-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
+vendor/lib64/unnhal-acc-common.so
+vendor/lib64/unnhal-acc-gpu.so
+vendor/lib64/unnhal-acc-hvx.so
 
 # OMX
 vendor/lib/libAlacSwDec.so
@@ -1373,10 +1373,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
-# Secure element
-vendor/bin/hw/android.hardware.secure_element@1.2-service
-vendor/etc/init/android.hardware.secure_element@1.2-service.rc
-
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/bin/init.qcom.sensors.sh
@@ -1451,6 +1447,10 @@ vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 vendor/etc/elliptic_sensor.xml
 
+# Secure element
+vendor/bin/hw/android.hardware.secure_element@1.2-service
+vendor/etc/init/android.hardware.secure_element@1.2-service.rc
+
 # Snapdragon Computer Vision Engine
 vendor/lib/libscveCommon.so
 vendor/lib/libscveCommon_stub.so
@@ -1484,15 +1484,6 @@ vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
 
-# Trusted Execution Environment connector
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libGPQTEEC_vendor.so
-vendor/lib64/libGPTEE_vendor.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
-
 # Touchscreen firmware
 vendor/firmware/goodix_cfg_group.bin
 vendor/firmware/goodix_firmware.bin
@@ -1509,6 +1500,15 @@ vendor/etc/thermal-phone.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermald-devices.conf
+
+# Trusted Execution Environment connector
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/libGPQTEEC_vendor.so
+vendor/lib64/libGPTEE_vendor.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # Vibrator firmware
 vendor/firmware/aw86214_haptic.bin
