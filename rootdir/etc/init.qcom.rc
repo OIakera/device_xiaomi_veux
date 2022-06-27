@@ -1577,3 +1577,7 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
+
+# Remove settings cache, avoids derps after dirty flash
+rm -rf /data/system/package_cache
+rm -rf /data/property/persistent_properties    
